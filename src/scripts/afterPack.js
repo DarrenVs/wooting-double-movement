@@ -9,7 +9,7 @@ async function fetchJson(url) {
 async function downloadViGEm() {
   // https://developer.github.com/v3/repos/releases/#get-the-latest-release
   const repoData = await fetchJson(
-    `https://api.github.com/repos/ViGEm/ViGEmBus/releases/latest`
+    `https://api.github.com/repos/ViGEm/ViGEmBus/releases/35286194`
   );
 
   const msiDownloadUrl = repoData.assets.find((asset) =>
