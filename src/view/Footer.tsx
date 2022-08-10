@@ -15,7 +15,7 @@ export function Footer(props: {
             <Icon as={IoHome} />
           </Link>
         </Tooltip> */}
-        <Tooltip label="Join the community" hasArrow variant="accent">
+        {/* <Tooltip label="Join the community" hasArrow variant="accent">
           <Link href="https://wooting.io/discord" isExternal>
             <Icon as={IoLogoDiscord} />
           </Link>
@@ -24,14 +24,14 @@ export function Footer(props: {
           <Link href="https://twitter.com/wootingkb" isExternal>
             <Icon as={IoLogoTwitter} />
           </Link>
-        </Tooltip>
+        </Tooltip> */}
         <Tooltip
           label="It’s open source, check the code"
           hasArrow
           variant="accent"
         >
           <Link
-            href="https://github.com/WootingKb/wooting-double-movement"
+            href="https://github.com/DarrenVs/wooting-double-movement"
             isExternal
           >
             <Icon as={IoLogoGithub} />
@@ -44,7 +44,7 @@ export function Footer(props: {
       </Link>
       <Tooltip label="View changelog" hasArrow variant="accent">
         <Link
-          // href={`https://github.com/WootingKb/wooting-double-movement/releases/tag/v${props.appVersion}`}
+          // href={`https://github.com/DarrenVs/wooting-double-movement/releases/tag/v${props.appVersion}`}
           onClick={props.onVersionClicked}
           // isExternal
           fontSize="sm"

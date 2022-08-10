@@ -23,7 +23,7 @@ export function KeyMappingTab() {
         fontSize="sm"
         onClick={setDefaultBindSettings}
       >
-        Reset keybinds to Wooting recommended
+        Reset keybinds to recommended
       </Link>
     </VStack>
   );

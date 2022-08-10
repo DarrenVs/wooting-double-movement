@@ -23,7 +23,7 @@ export function AppSettingsTab() {
         titleChildren={"Toggle Hotkey"}
         infoTooltip={
           <Text pt="1" fontSize="sm">
-            Change the hotkey to toggle on/off Double Movement. The hotkey
+            Change the hotkey to toggle on/off FFF Sprint. The hotkey
             requires at least 1 modifier key e.g. <Kbd>Ctrl</Kbd> with another
             non-modifier key e.g. <Kbd>P</Kbd>
           </Text>
@@ -40,7 +40,7 @@ export function AppSettingsTab() {
         fontSize="sm"
         onClick={resetToDefault}
       >
-        Reset to Wooting recommended
+        Reset to recommended
       </Link>
     </VStack>
   );

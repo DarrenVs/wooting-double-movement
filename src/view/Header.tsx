@@ -72,7 +72,7 @@ export function CopySettingsButton() {
 
     const singleKeyPercentage =
       (angleConfig.leftRightAngle - singleMin) / (singleMax - singleMin);
-    return `My Wooting Double Movement settings:
+    return `My FFF Sprint settings:
 ${PercentageText(strafePercentage)} ${(strafePercentage * 100).toFixed(
       0
     )}% Angle
@@ -106,7 +106,7 @@ ${useAnalogInput ? checkText : crossText} 360 movement ${
     <Popover isOpen={isDisabled ? false : undefined}>
       {({ isOpen, onClose }) => (
         <>
-          <PopoverTrigger>
+          {/* <PopoverTrigger>
             <Box>
               <Tooltip label="Share your settings!" hasArrow variant="accent">
                 <IconButton
@@ -117,7 +117,7 @@ ${useAnalogInput ? checkText : crossText} 360 movement ${
                 />
               </Tooltip>
             </Box>
-          </PopoverTrigger>
+          </PopoverTrigger> */}
           <PopoverContent
             w="fit-content"
             borderRadius="xl"
@@ -201,9 +201,9 @@ export function Header(props: { openAnnouncements: () => void }) {
       </Center>
       <Spacer />
       <Flex style={{ WebkitAppRegion: "no-drag" }}>
-        <Tooltip label="Problem? Solution here" hasArrow variant="accent">
+        {/* <Tooltip label="Problem? Solution here" hasArrow variant="accent">
           <Link
-            href="https://github.com/WootingKb/wooting-double-movement/wiki/Troubleshooting"
+            href="https://github.com/DarrenVs/wooting-double-movement/wiki/Troubleshooting"
             isExternal
           >
             <IconButton
@@ -231,7 +231,7 @@ export function Header(props: { openAnnouncements: () => void }) {
               />
             </Tooltip>
           )
-        }
+        } */}
         <IconButton
           variant="ghost"
           aria-label="Color Mode"

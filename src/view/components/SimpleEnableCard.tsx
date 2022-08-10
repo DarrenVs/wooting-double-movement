@@ -39,7 +39,7 @@ export function SimpleEnableCard() {
     <Card p="6">
       <Flex direction="column" onClick={toggleDmEnabled} cursor="pointer">
         <HStack>
-          <Heading>Enable Double Movement</Heading>
+          <Heading>Enable Faster FF Movement</Heading>
           <Spacer />
           {shouldWarnAnalog && (
             <Tooltip
@@ -63,21 +63,22 @@ export function SimpleEnableCard() {
                     {prev}+{current}
                   </>
                 ))}{" "}
-              to toggle double movement. (Configurable under Advanced mode)
+              to toggle FFF Sprint. (Configurable under Settings)
             </>
           ) : (
             <>
-              Or bind the Toggle hotkey under Advanced mode to be able to toggle
-              double movement on the fly.
+              Or bind the Toggle hotkey under Settings to be able to toggle
+              FFF Sprint on the fly.
             </>
           )}
           <br />
           <br />
-          You need to configure two things in Fortnite:
+          Enhances your Movement settings via virtual gamepads:
           <br />
-          1. Disable WASD keyboard movement bindings
           <br />
-          2. Lock input method as mouse
+          Standard: Sprint diagonally backwards
+          <br />
+          Legacy: Sprint in every direction (but, camera moves)
         </Text>
       </Flex>
     </Card>

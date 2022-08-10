@@ -35,7 +35,7 @@ export function AdvancedSettingsCard(props: {
         <AccordionItem border="none">
           <AccordionButton _hover={{ bg: "none" }}>
             <Heading flex="1" textAlign="left">
-              Advanced mode
+              Settings
             </Heading>
             <AccordionIcon />
           </AccordionButton>

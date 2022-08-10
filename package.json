@@ -1,12 +1,12 @@
 {
-  "name": "wooting-double-movement",
-  "version": "1.5.0",
-  "description": "Wooting Double Movement",
-  "author": "Wooting Technologies B.V.",
+  "name": "fff-movement",
+  "version": "1.5.1",
+  "description": "FFF Sprint",
+  "author": "DarrenVs",
   "main": "./js/main-bundle.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WootingKb/wooting-double-movement.git"
+    "url": "https://github.com/DarrenVs/wooting-double-movement.git"
   },
   "scripts": {
     "dev": "webpack -w --mode=development",

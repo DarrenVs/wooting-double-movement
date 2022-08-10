@@ -113,7 +113,7 @@ export function UpdateNotes(props: Props) {
           variant="plink"
           fontSize="sm"
           isExternal
-          href="https://github.com/WootingKb/wooting-double-movement/releases"
+          href="https://github.com/DarrenVs/wooting-double-movement/releases"
         >
           See all releases
         </Link>

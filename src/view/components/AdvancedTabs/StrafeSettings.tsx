@@ -18,8 +18,8 @@ import { InfoTooltip } from "../general/InfoTooltip";
 import { AngleControl } from "../settings/angle/AngleControl";
 import { keybindDisplay } from "./Utils";
 
-export const strafeAngleRange: [number, number] = [45, 71];
-const singleKeyStrafeAngleRange: [number, number] = [45, 71];
+export const strafeAngleRange: [number, number] = [0, 90];
+// const singleKeyStrafeAngleRange: [number, number] = [45, 71];
 
 export function StrafeAngleControl() {
   const [keyMapping, _] = useRemoteValue("keyMapping");
@@ -32,7 +32,7 @@ export function StrafeAngleControl() {
     "leftJoystickStrafingAngles"
   );
 
-  const isAdvancedStrafeOn = angleConfig.useLeftRightAngle;
+  // const isAdvancedStrafeOn = angleConfig.useLeftRightAngle;
 
   const toggleEnabled = useCallback(() => {
     const value = !angleConfig.useLeftRightAngle;
@@ -57,8 +57,8 @@ export function StrafeAngleControl() {
           <Text pt="1" fontSize="sm">
             This option allows you to adjust the angle you will strafe by
             pressing <Kbd>Left</Kbd>/<Kbd>Right</Kbd> at the same time as{" "}
-            <Kbd>Forward</Kbd> (e.g.{" "}
-            {keybindDisplay(keyMapping.leftJoystick.up, "W")}+
+            <Kbd>Backwards</Kbd> (e.g.{" "}
+            {keybindDisplay(keyMapping.leftJoystick.down, "S")}+
             {keybindDisplay(keyMapping.leftJoystick.right, "D")})
           </Text>
         </InfoTooltip>
@@ -70,7 +70,7 @@ export function StrafeAngleControl() {
         max={strafeAngleRange[1]}
       />
 
-      <Flex
+      {/* <Flex
         width="100%"
         direction="column"
         onClick={toggleEnabled}
@@ -89,7 +89,7 @@ export function StrafeAngleControl() {
             </InfoTooltip>
           </Flex>
           <Spacer />
-          {/* Render switch as Div so onClick doesn't get triggered twice: https://github.com/chakra-ui/chakra-ui/issues/2854 */}
+          {/* Render switch as Div so onClick doesn't get triggered twice: https://github.com/chakra-ui/chakra-ui/issues/2854 *-/}
           <Switch
             colorScheme="accent"
             isChecked={isAdvancedStrafeOn}
@@ -104,7 +104,7 @@ export function StrafeAngleControl() {
           min={singleKeyStrafeAngleRange[0]}
           max={singleKeyStrafeAngleRange[1]}
         />
-      )}
+      )} */}
       <Link
         position="absolute"
         bottom="0px"
@@ -113,7 +113,7 @@ export function StrafeAngleControl() {
         fontSize="sm"
         onClick={setDefaultStrafingSettings}
       >
-        Reset settings to Wooting recommended
+        Reset settings to recommended
       </Link>
     </VStack>
   );

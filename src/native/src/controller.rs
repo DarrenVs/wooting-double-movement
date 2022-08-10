@@ -91,7 +91,10 @@ mod utils {
         // The factors that adjust the angles of the joystick output
         // Convert the d_param from 0->1 to -1 -> 1
         // We do the check with y to make sure we're not applying this when we're moving backwards
-        let s_d = if y > 0.0 { (d_param * 2.0) - 1.0 } else { 0.0 };
+        // let s_d = if y > 0.0 { (d_param * 2.0) - 1.0 } else { 0.0 };
+
+        //FFF Sprint edit:
+        let s_d = if y < 0.0 { (d_param * 2.0) - 1.0 } else { 0.0 };
 
         // The input number for this is 0->1 which corresponds to the 2 -> 0 range of this parameter, so we need to convert
         let s_y = horizontal_angle.map(|v| (1.0 - v) * 2.0).unwrap_or(0.0);
@@ -99,11 +102,19 @@ mod utils {
         let k_x = x;
         let k_y = y;
 
-        let k_a_x = f32::abs(k_x);
+        let mut k_a_x = f32::abs(k_x);
         let k_a_y = f32::abs(k_y);
 
         let k_p_x = if k_x == 0.0 { 1.0 } else { k_x / k_a_x };
         let k_p_y = if k_y == 0.0 { 1.0 } else { k_y / k_a_y };
+
+        //FFF Sprint edit:
+        if k_a_x - k_a_y == 1.0 || (k_y > 0.0 && k_a_x - k_a_y == 0.0) || k_a_x == 0.0 || k_a_y == 0.0 {
+            return (0.0, 0.0);
+        }
+        if k_y < 0.0 && k_a_x < k_a_y {
+            k_a_x = k_a_y;
+        }
 
         let r = {
             if k_a_x > k_a_y {

@@ -100,13 +100,14 @@ export function AcceleratorEditor(props: AcceleratorEditorProps & InputProps) {
           let res;
 
           // If the key isn't a modifier and nothing is present then we ignore until we get a modifier
-          if (!isModifier && current.length === 0) {
-            res = current;
-            // If the key is already present ignore
-          } else if (current.includes(event.keyCode)) res = current;
+          // if (!isModifier && current.length === 0) {
+          //   res = current;
+          //   // If the key is already present ignore
+          // } else
+          if (current.includes(event.keyCode)) res = current;
           else res = [...current, event.keyCode];
 
-          canComplete = res.length > 1;
+          canComplete = res.length > 0;
 
           return res;
         });

@@ -302,7 +302,7 @@ const contextMenu = Menu.buildFromTemplate([
     },
   },
   {
-    label: "Toggle Double Movement",
+    label: "Toggle FFF Sprint",
     type: "checkbox",
     //We can tell from the ServiceState whether the service is enabled or not
     checked: false,
@@ -318,7 +318,7 @@ const contextMenu = Menu.buildFromTemplate([
 function create_tray() {
   if (!tray) {
     tray = new Tray(`${__dirname}/../build/icon.ico`);
-    tray.setToolTip("Wooting Double Movement");
+    tray.setToolTip("FFF Sprint");
     tray.on("double-click", () => {
       showOrCreateMainWindow();
     });
@@ -341,7 +341,7 @@ function showNotification(state: boolean) {
   }
 
   const config = {
-    title: "Wooting Double Movement " + (state ? "Enabled" : "Disabled"),
+    title: "FFF Sprint " + (state ? "Enabled" : "Disabled"),
     icon: `${__dirname}/../build/icon.ico`,
   };
   notification = new Notification(config);
@@ -578,7 +578,7 @@ class ServiceManager {
   onError = (error: Error) => {
     console.error(error);
     dialog.showErrorBox(
-      "Wooting Double Movement errored",
+      "FFF Sprint errored",
       `An unexpected error occurred in the service, it's going to be disabled, please try again.\n\nPlease ensure that "Nefarius Virtual Gamepad Emulation Bus" is correctly installed.\n\n${error}`
     );
     this.set_double_movement_enabled(false);
@@ -594,7 +594,7 @@ class ServiceManager {
       try {
         if (!startService(this.serviceConfiguration(), this.onError)) {
           dialog.showErrorBox(
-            "Wooting Double Movement Error",
+            "FFF Sprint Error",
             `An error occurred while starting the service.\n\nThis is likely caused by "Nefarius Virtual Gamepad Emulation Bus" not being correctly installed.\n\nPlease double check your installation. Quiting...`
           );
           app.quit();
@@ -606,7 +606,7 @@ class ServiceManager {
             dialog.showMessageBox({
               type: "error",
               title: "Player slot warning",
-              message: `Wooting Double Movement's controller is not in player slot 1, rather slot ${
+              message: `FFF Sprint's controller is not in player slot 1, rather slot ${
                 slot + 1
               }. You might experience issues in game. \n\nRemove all connected controllers, remove any virtual controllers, and restart this app.`,
             });

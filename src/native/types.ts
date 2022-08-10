@@ -9,7 +9,7 @@ export interface JoystickAngleConfiguration {
 }
 
 export const defaultLeftJoystickStrafingAngles: JoystickAngleConfiguration = {
-  upDiagonalAngle: 0.6473,
+  upDiagonalAngle: 0.52,
   useLeftRightAngle: true,
   leftRightAngle: 0.7888,
   analogRange: [0.075, 0.9],
@@ -39,7 +39,7 @@ export const defaultKeyMapping: KeyMapping = {
   },
 };
 
-export const defaultToggleAccelerator = [Key.Ctrl, Key.P];
+export const defaultToggleAccelerator = [];
 
 export interface ServiceConfiguration {
   leftJoystickStrafingAngles: JoystickAngleConfiguration;
