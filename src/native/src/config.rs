@@ -80,7 +80,7 @@ impl Default for ServiceConfiguration {
             left_joystick_strafing_angles: JoystickAngleConfiguration {
                 up_diagonal_angle: 0.52,
                 use_left_right_angle: false,
-                left_right_angle: 0.5,
+                left_right_angle: 1.0,
                 analog_range: (0.0, 1.0),
             },
             key_mapping: KeyMapping::default(),
